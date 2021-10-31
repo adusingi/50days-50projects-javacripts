@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.clock {
+  background-color: #eee;
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+.needle {
+  /* background-color: #333; */
+  height: 50px;
+  width: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+}
+.needle.hours {
+  background-color: red;
+  transform: translate(-50%, -100%) rotate(0);
+}
+.needle.minutes {
+  background-color: rgb(47, 0, 255);
+  height: 70px;
+  transform: translate(-50%, -100%) rotate(0);
+}
+.needle.seconds {
+  background-color: rgb(255, 0, 98);
+  height: 80px;
+  transform: translate(-50%, -100%) rotate(0);
+}
+.center-point {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.center-point::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.time {
+  font-size: 40px;
+}
+
+.date {
+  color: #aaa;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.date .circle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 18px;
+  transition: all 0.5s ease-in;
+  font-size: 12px;
+}
